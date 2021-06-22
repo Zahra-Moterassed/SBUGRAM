@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #34495E;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.PostViewController">
+   <children>
+      <TextField fx:id="Tile" layoutX="40.0" layoutY="220.0" style="-fx-background-color: #AED6F1;" />
+      <TextArea fx:id="Description" layoutX="41.0" layoutY="253.0" prefHeight="187.0" prefWidth="287.0" />
+      <Button layoutX="43.0" layoutY="487.0" mnemonicParsing="false" onAction="#AddLike" prefHeight="26.0" prefWidth="44.0" style="-fx-background-color: #AED6F1;" text="like" textFill="#060eff">
+         <font>
+            <Font name="Cooper Black" size="13.0" />
+         </font></Button>
+      <ImageView fx:id="ProfilePhoto" fitHeight="100.0" fitWidth="115.0" layoutX="114.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="WriterName" fill="#00ccff" layoutX="138.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Writer:">
+         <font>
+            <Font name="French Script MT" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="PostDate" fill="#00dfff" layoutX="122.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:">
+         <font>
+            <Font name="French Script MT" size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="268.0" layoutY="119.0" mnemonicParsing="false" onAction="#ViewProfile" prefHeight="27.0" prefWidth="94.0" style="-fx-background-color: #2E86C1;" text="View Profile" textFill="WHITE">
+         <font>
+            <Font name="Cooper Black" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="91.0" layoutY="487.0" mnemonicParsing="false" onAction="#AddComment" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: #AED6F1;" text="Add comment" textFill="#2200ff">
+         <font>
+            <Font name="Cooper Black" size="11.0" />
+         </font>
+      </Button>
+      <Button layoutX="189.0" layoutY="487.0" mnemonicParsing="false" onAction="#ViewComments" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #AED6F1;" text="View comments" textFill="#0d00ff">
+         <font>
+            <Font name="Cooper Black" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="309.0" layoutY="487.0" mnemonicParsing="false" onAction="#Repost" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #AED6F1;" text="Repost" textFill="#000dff">
+         <font>
+            <Font name="Cooper Black" size="12.0" />
+         </font>
+      </Button>
+      <Text fx:id="Likes" fill="#00bfff" layoutX="76.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Likes:" wrappingWidth="47.200000000000045">
+         <font>
+            <Font name="French Script MT" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="Reposts" fill="#00ccff" layoutX="241.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reposts:">
+         <font>
+            <Font name="French Script MT" size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="24.0" layoutY="25.0" mnemonicParsing="false" onAction="#BackToFeed" style="-fx-background-color: #2E86C1;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Cooper Black" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
