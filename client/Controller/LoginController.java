@@ -66,4 +66,8 @@ public class LoginController {
             password_field.setText(Password_textfield.getText());
         }
     }
+
+    public void RetrievePassword(ActionEvent actionEvent) throws IOException {
+        new PageLoader().load("ForgetPassword");
+    }
 }

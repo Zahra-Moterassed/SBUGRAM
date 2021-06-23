@@ -49,6 +49,11 @@ public class ClientHandler implements Runnable{
                         answer = API.logout(income);
                         clientOnline = false;
                         break;
+                   case FORGET_PASSWORD:
+                        answer=API.ForgetPassword(income);
+                        break;
+
+
 
                 }
                 Output.writeObject(answer);

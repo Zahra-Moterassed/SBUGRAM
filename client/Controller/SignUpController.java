@@ -27,6 +27,7 @@ public class SignUpController extends Component {
     public Text username_already;
     public Text invalid_password;
     public ImageView profile;
+    public TextField ForgetPasswordQ;
 
     public void BackToLogin(ActionEvent actionEvent) throws IOException {
         new PageLoader().load("login");
@@ -53,7 +54,7 @@ public class SignUpController extends Component {
                 invalid_password.setVisible(false);
                 username_already.setVisible(false);
                 Account account = new Account(Username.getText(), password.getText(), name.getText(), Lastname.getText()
-                        , PhoneNumber.getText(), BirthDate.getText());
+                        , PhoneNumber.getText(), BirthDate.getText(),ForgetPasswordQ.getText());
                if (ClientAPI.signUp(account)) {
                    new PageLoader().load("timeLine");
                }

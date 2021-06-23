@@ -35,5 +35,11 @@
       </ImageView>
       <TextField fx:id="Password_textfield" layoutX="117.0" layoutY="288.0" prefHeight="29.0" prefWidth="149.0" promptText="Password" visible="false" />
       <CheckBox layoutX="277.0" layoutY="292.0" mnemonicParsing="false" onAction="#showPassword" text="Show" textFill="#00b2ff" />
+      <Text fill="#00ffe9" layoutX="145.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" />
+      <Button layoutX="131.0" layoutY="508.0" mnemonicParsing="false" onAction="#RetrievePassword" prefHeight="29.0" prefWidth="131.0" style="-fx-background-color: #a4a4a4;" text="Retrieve Password" textFill="WHITE">
+         <font>
+            <Font name="Cooper Black" size="11.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

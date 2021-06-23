@@ -36,6 +36,18 @@ public class ClientAPI {
     }
 
 
+    public static Account ForgetPassword(String username, String ForgetPasswordAns){
+        Map<String,Object> toSend = new HashMap<>();
+        toSend.put("command", Commands.FORGET_PASSWORD);
+        toSend.put("username",username);
+        toSend.put("ForgetPasswordAnswer",ForgetPasswordAns);
+        Map<String,Object> received = ClientConnector.serve(toSend);
+        if ( received.get("answer") == null ) return null;
+        return (Account) received.get("answer");
+    }
+
+
+
     public static Boolean updateProfile(Account account){
         Map<String,Object> toSend = new HashMap<>();
         toSend.put("command", Commands.UPDATE_PROFILE);

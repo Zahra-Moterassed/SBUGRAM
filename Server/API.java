@@ -63,6 +63,26 @@ public class API {
 
         return ans;
     }
+    public static Map<String,Object> ForgetPassword(Map<String,Object> income){
+
+        String username = (String) income.get("username");
+        String ForgetPassword = (String) income.get("ForgetPasswordAnswer");
+
+        Boolean isNullAccount = (Server.accounts.get(username) == null);
+        Map<String,Object> answer = new HashMap<>();
+        answer.put("command",Commands.FORGET_PASSWORD);
+        answer.put("exists",!isNullAccount);
+        if(isNullAccount){
+            return answer;
+        }
+        Account account = Server.accounts.get(username).findAccount(username,ForgetPassword);
+        answer.put("answer",account);
+
+        if(account != null){
+        }
+        return answer;
+    }
+
 //shouldcheck
     public static Map<String,Object> updateProfile(Map<String,Object> income){
 

@@ -6,7 +6,8 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 
 public class MenuController {
-    public void Profile(ActionEvent actionEvent) {
+    public void Profile(ActionEvent actionEvent) throws IOException {
+        new PageLoader().load("YourProfile");
     }
 
     public void NewPost(ActionEvent actionEvent) throws IOException {

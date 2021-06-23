@@ -7,21 +7,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #34495E;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.YourProfileController">
    <children>
       <ImageView fx:id="YourProfilePhoto" fitHeight="132.0" fitWidth="136.0" layoutX="56.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fx:id="Name" fill="#00faff" layoutX="205.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="136.0">
+      <Text fill="#00faff" layoutX="201.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="54.399999999999864">
          <font>
             <Font name="French Script MT" size="24.0" />
          </font>
       </Text>
-      <Text fx:id="Username" fill="#00ecff" layoutX="205.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" wrappingWidth="136.0">
+      <Text fill="#00ecff" layoutX="196.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" wrappingWidth="80.0">
          <font>
             <Font name="French Script MT" size="24.0" />
          </font>
       </Text>
-      <Text fx:id="BirthDay" fill="#00fffb" layoutX="205.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BirthDay:" wrappingWidth="143.6702880859375">
+      <Text fill="#00fffb" layoutX="196.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BirthDay:" wrappingWidth="80.0">
          <font>
             <Font name="French Script MT" size="24.0" />
          </font>
@@ -47,5 +46,8 @@
             <Font name="Cooper Black" size="13.0" />
          </font>
       </Button>
+      <Text fx:id="Name" fill="#00c8ff" layoutX="273.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="62.936767578125" />
+      <Text fx:id="Username" fill="#00eaff" layoutX="287.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="80.0" />
+      <Text fx:id="Birthday" fill="#00d9ff" layoutX="285.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="72.53668212890625" />
    </children>
 </AnchorPane>
