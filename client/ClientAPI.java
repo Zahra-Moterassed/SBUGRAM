@@ -23,6 +23,7 @@ public class ClientAPI {
         toSend.put("password",password);
         Map<String,Object> received = ClientConnector.serve(toSend);
         if ( received.get("answer") == null ) return null;
+        ClientEXE.setProfile((Account) received.get("answer"));
         return (Account) received.get("answer");
     }
 
@@ -52,9 +53,9 @@ public class ClientAPI {
         Map<String,Object> toSend = new HashMap<>();
         toSend.put("command", Commands.UPDATE_PROFILE);
         toSend.put("account", account);
-        Map<String,Object> recieved = ClientConnector.serve(toSend);
-        if ( recieved.get("answer") == null ) return false;
-        return (Boolean) recieved.get("answer");
+        Map<String,Object> received = ClientConnector.serve(toSend);
+        if ( received.get("answer") == null ) return false;
+        return (Boolean) received.get("answer");
     }
 
 

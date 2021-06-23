@@ -46,8 +46,20 @@
             <Font name="Cooper Black" size="13.0" />
          </font>
       </Button>
-      <Text fx:id="Name" fill="#00c8ff" layoutX="273.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="62.936767578125" />
-      <Text fx:id="Username" fill="#00eaff" layoutX="287.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="80.0" />
-      <Text fx:id="Birthday" fill="#00d9ff" layoutX="285.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="72.53668212890625" />
+      <Text fx:id="Name" fill="WHITE" layoutX="273.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="62.936767578125">
+         <font>
+            <Font name="Harrington" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="Username" fill="WHITE" layoutX="281.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="80.0">
+         <font>
+            <Font name="Harrington" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="Birthday" fill="WHITE" layoutX="285.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="72.53668212890625">
+         <font>
+            <Font name="Harrington" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

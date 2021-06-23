@@ -1,8 +1,6 @@
 package Client.Model;
 
-import Client.Client;
 import Client.ClientConnector;
-import Common.Account;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

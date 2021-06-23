@@ -1,7 +1,6 @@
 package Client.Controller;
 
 import Client.ClientAPI;
-import Common.Account;
 import Client.Model.PageLoader;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;

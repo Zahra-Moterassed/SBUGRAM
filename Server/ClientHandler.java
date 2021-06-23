@@ -46,7 +46,6 @@ public class ClientHandler implements Runnable{
                         answer = API.updateProfile(income);
                         break;
                     case LogOut:
-                        answer = API.logout(income);
                         clientOnline = false;
                         break;
                    case FORGET_PASSWORD:

@@ -28,13 +28,16 @@
       <TextField fx:id="PhoneNumber" layoutX="114.0" layoutY="197.0" promptText="Phone Number" />
       <Text fx:id="username_already" fill="#fa0000" layoutX="114.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username already exists!" visible="false" wrappingWidth="142.20001220703125" />
       <Text fx:id="invalid_password" fill="RED" layoutX="64.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password must include at least 8 characters" visible="false" wrappingWidth="229.189453125" />
-      <ImageView fx:id="profile" fitHeight="71.0" fitWidth="107.0" layoutX="135.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="profile" fitHeight="71.0" fitWidth="107.0" layoutX="142.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="138.0" layoutY="94.0" mnemonicParsing="false" onAction="#ChoosePhoto" style="-fx-background-color: #6c6c6c;" text="Choose Photo" textFill="#5ec4ff">
          <font>
             <Font name="Cooper Black" size="12.0" />
          </font>
       </Button>
       <TextField fx:id="ForgetPasswordQ" layoutX="114.0" layoutY="407.0" prefHeight="26.0" prefWidth="163.0" promptText="What's your favourite color?" />
-      <Text layoutX="123.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget passwords question:" />
+      <Text fill="LIME" layoutX="116.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget passwords question:">
+         <font>
+            <Font name="Cooper Black" size="12.0" />
+         </font></Text>
    </children>
 </AnchorPane>

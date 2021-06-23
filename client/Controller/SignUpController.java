@@ -1,18 +1,16 @@
 package Client.Controller;
 
 import Client.ClientAPI;
-import Client.ClientConnector;
+import Client.ClientEXE;
 import Common.Account;
 import Client.Model.PageLoader;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
-import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -55,6 +53,7 @@ public class SignUpController extends Component {
                 username_already.setVisible(false);
                 Account account = new Account(Username.getText(), password.getText(), name.getText(), Lastname.getText()
                         , PhoneNumber.getText(), BirthDate.getText(),ForgetPasswordQ.getText());
+                ClientEXE.setProfile(account);
                if (ClientAPI.signUp(account)) {
                    new PageLoader().load("timeLine");
                }
