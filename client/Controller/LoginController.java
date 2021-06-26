@@ -13,7 +13,7 @@ import java.io.IOException;
 public class LoginController {
     @FXML
     public PasswordField password_field;
-    public javafx.scene.control.Button login_button;
+    public Button login_button;
     public TextField username_field;
     public Button signup_button;
     public Label wrongPass_label;

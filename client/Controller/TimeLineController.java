@@ -27,7 +27,7 @@ public class TimeLineController {
 
         Set<Post> posts= ClientAPI.getPosts();
         List<Post> newPosts=posts.stream().filter(x->x.getWriter().equals(ClientEXE.getProfile())).
-                sorted((a, b)-> (int) (a.getCreatedTime()-b.getCreatedTime())).collect(Collectors.toList());
+                sorted((a, b)-> (int) (b.getCreatedTime()-a.getCreatedTime())).collect(Collectors.toList());
 
         //show the post array in list view
         postsList.setItems(FXCollections.observableArrayList(newPosts));
@@ -37,7 +37,8 @@ public class TimeLineController {
     }
 
 
-
-
-
+    public void Refresh(ActionEvent actionEvent) throws IOException {
+        Set<Post> posts= ClientAPI.getPosts();
+        new PageLoader().load("timeLine");
+    }
 }

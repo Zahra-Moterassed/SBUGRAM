@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Post implements Serializable {
+public class Post implements Serializable,Comparable<Post> {
     private Account writer;
     private String title;
     private String description;
@@ -84,5 +84,10 @@ public class Post implements Serializable {
 
     public String getTimeString() {
         return timeString;
+    }
+
+    @Override
+    public int compareTo(Post o) {
+        return (int) (this.createdTime - o.createdTime);
     }
 }

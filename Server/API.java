@@ -71,7 +71,7 @@ public class API {
         String username = (String) income.get("username");
         String ForgetPassword = (String) income.get("ForgetPasswordAnswer");
 
-        Boolean isNullAccount = (Server.accounts.get(username) == null);
+        boolean isNullAccount = (Server.accounts.get(username) == null);
         Map<String,Object> answer = new HashMap<>();
         answer.put("command",Commands.FORGET_PASSWORD);
         answer.put("exists",!isNullAccount);
@@ -111,15 +111,17 @@ public class API {
 
 
     public static Map<String, Object> AddPost(Map<String, Object> income) {
-        Map<String,Object> answer = new HashMap<>();
-        Post newPost= (Post) income.get("post");
-        Server.posts.add(newPost);
-        DataBase.getInstance().updateDataBase();
-        answer.put("command",Commands.ADD_POST);
-        answer.put("answer",new Boolean(true));
+        try {
+            Map<String, Object> answer = new HashMap<>();
+            Post newPost = (Post) income.get("post");
+            Server.posts.add(newPost);
+            DataBase.getInstance().updateDataBase();
+            answer.put("command", Commands.ADD_POST);
+            answer.put("answer", new Boolean(true));
+            return answer;
+        }catch (Exception e){e.printStackTrace();}
+        return null;
 
-
-        return answer;
     }
 
     public static Map<String, Object> getPosts(Map<String, Object> income) {

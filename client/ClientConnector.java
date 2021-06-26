@@ -67,7 +67,7 @@ public class ClientConnector {
         try{
             socketOut.writeObject(toSend);
             socketOut.flush();
-            socketOut.reset();
+//            socketOut.reset();
 
             received = (Map<String,Object>) socketIn.readObject();
 
