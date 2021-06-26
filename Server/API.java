@@ -5,10 +5,8 @@ import Common.Commands;
 import Common.Post;
 import Common.Time;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class API {
     public static Map<String,Object> isUserNameUnique(Map<String,Object> income){
@@ -41,10 +39,10 @@ public class API {
         answer.put("answer",account);
 
         if(account != null){
-            //not mine
+
             System.out.println(account.getUserName() + " signin");
             System.out.println("time : "+ Time.getTime());
-            //not mine
+
         }
         return answer;
     }
@@ -62,7 +60,6 @@ public class API {
         System.out.println("time : "+Time.getTime());
         System.out.println(newAccount.getUserName() + " login");
         System.out.println("time : "+Time.getTime());
-
 
         return ans;
     }
@@ -137,6 +134,7 @@ public class API {
         Post newPost = (Post) income.get("post");
         Server.posts.remove(newPost);
         Server.posts.add(newPost);
+
         DataBase.getInstance().updateDataBase(); // save to local file
 
         Map<String,Object> ans = new HashMap<>();

@@ -39,6 +39,12 @@ public class TimeLineController {
 
     public void Refresh(ActionEvent actionEvent) throws IOException {
         Set<Post> posts= ClientAPI.getPosts();
-        new PageLoader().load("timeLine");
+        List<Post> newPosts=posts.stream().filter(x->x.getWriter().equals(ClientEXE.getProfile())).
+                sorted((a, b)-> (int) (b.getCreatedTime()-a.getCreatedTime())).collect(Collectors.toList());
+        postsList.setItems(FXCollections.observableArrayList(newPosts));
+
+        //customize each cell of postList with new graphic object PostItem
+        postsList.setCellFactory(postList -> new PostItem());
+        new PageLoader().load("Menu");
     }
 }

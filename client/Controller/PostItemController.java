@@ -1,6 +1,7 @@
 package Client.Controller;
 
 import Client.ClientAPI;
+import Client.ClientEXE;
 import Client.Model.PageLoader;
 import Common.Post;
 import javafx.event.ActionEvent;
@@ -11,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class PostItemController {
     public AnchorPane root;
@@ -43,13 +45,19 @@ public class PostItemController {
     }
 
     //you can show post's detail in new page with this method
-    public void detail(ActionEvent actionEvent) {
+    public void ViewProfile(ActionEvent actionEvent) throws IOException {
+        ClientEXE.setPost(post);
+        new PageLoader().load("ProfileView");
 
     }
 
     public void Like(MouseEvent mouseEvent){
-
-
+        AtomicInteger like=new AtomicInteger();
+        like.set(post.getLikes().incrementAndGet());
+        post.setLikes(like);
+       if (ClientAPI.LikePost(post)){
+           likes.setText(String.valueOf(post.getLikes()));
+       }
 
     }
     public void Repost(MouseEvent mouseEvent){

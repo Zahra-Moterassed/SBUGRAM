@@ -23,7 +23,7 @@ public class NewPostController {
         post.setWriter(ClientEXE.getProfile());
 
         if (ClientAPI.AddPost(post)) {
-            
+
             new PageLoader().load("timeLine");
         }
 
