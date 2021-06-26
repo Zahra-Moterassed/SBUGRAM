@@ -12,8 +12,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class SignUpController extends Component {
     public TextField name;
@@ -26,7 +25,7 @@ public class SignUpController extends Component {
     public Text invalid_password;
     public ImageView profile;
     public TextField ForgetPasswordQ;
-
+    Account account;
     public void BackToLogin(ActionEvent actionEvent) throws IOException {
         new PageLoader().load("login");
     }
@@ -51,8 +50,9 @@ public class SignUpController extends Component {
             if (isValidUsername(Username.getText()) && isValidPassword(password.getText())) {
                 invalid_password.setVisible(false);
                 username_already.setVisible(false);
-                Account account = new Account(Username.getText(), password.getText(), name.getText(), Lastname.getText()
+                account = new Account(Username.getText(), password.getText(), name.getText(), Lastname.getText()
                         , PhoneNumber.getText(), BirthDate.getText(),ForgetPasswordQ.getText());
+
                 ClientEXE.setProfile(account);
                if (ClientAPI.signUp(account)) {
                    new PageLoader().load("timeLine");
@@ -60,13 +60,13 @@ public class SignUpController extends Component {
             }
     }
 
-    public Image chooser() {
+    public Image chooser() throws IOException {
         FileChooser fileChooser=new FileChooser();
         File file=fileChooser.showOpenDialog(PageLoader.stage.getScene().getWindow());
         return new Image(file.toURI().toString());
     }
 
-    public void ChoosePhoto(ActionEvent actionEvent) {
+    public void ChoosePhoto(ActionEvent actionEvent) throws IOException {
         profile.setImage(chooser());
     }
 }

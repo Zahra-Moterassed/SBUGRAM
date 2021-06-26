@@ -2,6 +2,7 @@ package Client.Controller;
 
 import Client.Model.PageLoader;
 import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
@@ -18,7 +19,7 @@ public class MenuController {
         new PageLoader().load("login");
     }
 
-    public void Back(ActionEvent actionEvent) throws IOException {
+    public void back(MouseEvent mouseEvent) throws IOException {
         new PageLoader().load("timeLine");
     }
 }

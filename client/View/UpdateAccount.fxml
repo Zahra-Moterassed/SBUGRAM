@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #34495E;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.UpdateAccountController">
    <children>
       <TextField fx:id="firstname" layoutX="109.0" layoutY="145.0" prefHeight="26.0" prefWidth="162.0" promptText="First Name" />
@@ -15,7 +14,7 @@
       <TextField fx:id="Birthday" layoutX="109.0" layoutY="287.0" prefHeight="26.0" prefWidth="162.0" promptText="BirthDay" />
       <TextField fx:id="Password" layoutX="109.0" layoutY="335.0" prefHeight="26.0" prefWidth="162.0" promptText="Password" />
       <TextField fx:id="forgetPasseordQ" layoutX="109.0" layoutY="380.0" prefHeight="26.0" prefWidth="162.0" promptText="What's your favourite color?" />
-      <ImageView fitHeight="107.0" fitWidth="115.0" layoutX="133.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ProfilePhoto" fitHeight="107.0" fitWidth="115.0" layoutX="133.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="133.0" layoutY="448.0" mnemonicParsing="false" onAction="#UpdateAccount" prefHeight="34.0" prefWidth="115.0" style="-fx-background-color: #69f27b;" text="Update Account" textFill="#007931">
          <font>
             <Font name="Cooper Black" size="12.0" />

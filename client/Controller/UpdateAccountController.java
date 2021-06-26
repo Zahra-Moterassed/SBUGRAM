@@ -6,7 +6,11 @@ import Client.Model.PageLoader;
 import Common.Account;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.io.IOException;
 
 public class UpdateAccountController {
@@ -17,6 +21,7 @@ public class UpdateAccountController {
     public TextField Birthday;
     public TextField Password;
     public TextField forgetPasseordQ;
+    public ImageView ProfilePhoto;
 
     public void UpdateAccount(ActionEvent actionEvent) throws IOException {
         Account account=new Account(ClientEXE.getProfile().AccountUsername,Password.getText(),firstname.getText(),lastname.getText()
@@ -27,7 +32,13 @@ public class UpdateAccountController {
         }
     }
 
-    public void ChoosePhoto(ActionEvent actionEvent) {
+    public Image chooser() {
+        FileChooser fileChooser=new FileChooser();
+        File file=fileChooser.showOpenDialog(PageLoader.stage.getScene().getWindow());
+        return new Image(file.toURI().toString());
+    }
 
+    public void ChoosePhoto(ActionEvent actionEvent) {
+        ProfilePhoto.setImage(chooser());
     }
 }

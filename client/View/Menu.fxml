@@ -8,29 +8,29 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #34495E;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.MenuController">
    <children>
-      <Button layoutX="143.0" layoutY="239.0" mnemonicParsing="false" onAction="#Profile" prefHeight="34.0" prefWidth="87.0" style="-fx-background-color: #2E86C1;" text="Profile" textFill="WHITE">
+      <Button layoutX="143.0" layoutY="273.0" mnemonicParsing="false" onAction="#Profile" prefHeight="34.0" prefWidth="87.0" style="-fx-background-color: #2E86C1;" text="Profile" textFill="WHITE">
          <font>
             <Font name="Cooper Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="143.0" layoutY="303.0" mnemonicParsing="false" onAction="#NewPost" prefHeight="34.0" prefWidth="87.0" style="-fx-background-color: #2E86C1;" text="New Post" textFill="WHITE">
+      <Button layoutX="143.0" layoutY="353.0" mnemonicParsing="false" onAction="#NewPost" prefHeight="34.0" prefWidth="87.0" style="-fx-background-color: #2E86C1;" text="New Post" textFill="WHITE">
          <font>
             <Font name="Cooper Black" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="143.0" layoutY="383.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="34.0" prefWidth="87.0" style="-fx-background-color: #2E86C1;" text="Log Out" textFill="WHITE">
+      <Button layoutX="143.0" layoutY="437.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="34.0" prefWidth="87.0" style="-fx-background-color: #2E86C1;" text="Log Out" textFill="WHITE">
          <font>
             <Font name="Cooper Black" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="65.0" layoutY="490.0" mnemonicParsing="false" onAction="#Back" prefHeight="34.0" prefWidth="56.0" style="-fx-background-color: #AED6F1;" text="Back" textFill="#0d00ff">
-         <font>
-            <Font name="Cooper Black" size="14.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="152.0" fitWidth="179.0" layoutX="107.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="152.0" fitWidth="179.0" layoutX="99.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/Moterased/IdeaProjects/SBUGRAM/src/images/87390.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="57.0" fitWidth="56.0" layoutX="26.0" layoutY="14.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/Ic_arrow_back_48px.svg.png" />
          </image>
       </ImageView>
    </children>

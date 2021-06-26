@@ -2,11 +2,38 @@ package Common;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Post implements Serializable {
-    private String writer;
+    private Account writer;
     private String title;
     private String description;
+    private AtomicInteger likes=new AtomicInteger(0);
+    private AtomicInteger reposts=new AtomicInteger(0);
+    private final Long createdTime;
+    private final String timeString;
+
+    public void setLikes(AtomicInteger likes) {
+        this.likes = likes;
+    }
+
+    public void setReposts(AtomicInteger reposts) {
+        this.reposts = reposts;
+    }
+
+    public AtomicInteger getLikes() {
+        return likes;
+    }
+
+    public AtomicInteger getReposts() {
+        return reposts;
+    }
+
+    public Post() {
+        this.createdTime =Time.getMilli();
+        this.timeString =Time.getTime() ;
+    }
+
 
     public String getTitle() {
         return title;
@@ -24,11 +51,11 @@ public class Post implements Serializable {
         this.description = description;
     }
 
-    public String getWriter() {
+    public Account getWriter() {
         return writer;
     }
 
-    public void setWriter(String writer) {
+    public void setWriter(Account writer) {
         this.writer = writer;
     }
 
@@ -49,5 +76,13 @@ public class Post implements Serializable {
     @Override
     public String toString() {
         return title;
+    }
+
+    public Long getCreatedTime() {
+        return createdTime;
+    }
+
+    public String getTimeString() {
+        return timeString;
     }
 }

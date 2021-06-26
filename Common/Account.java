@@ -1,5 +1,7 @@
 package Common;
 
+import javafx.scene.image.Image;
+
 import java.io.Serializable;
 
 public class Account implements Serializable {
@@ -11,9 +13,18 @@ public class Account implements Serializable {
     public String phoneNumber;
     public String DateOfBirth;
     public String ForgetPasswordAnswer;
+    public Image image;
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
+    public Image getImage() {
+        return image;
+    }
 
     public Account(String accountUsername, String accountPassword, String firstname, String lastname,
-                   String phoneNumber, String dateOfBirth,String ForgetPasswordAnswer) {
+                   String phoneNumber, String dateOfBirth, String ForgetPasswordAnswer) {
         AccountUsername = accountUsername;
         AccountPassword = accountPassword;
         this.firstname = firstname;

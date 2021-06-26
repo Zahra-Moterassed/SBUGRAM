@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.HashMap;
 import java.util.Map;
 
 public class ClientHandler implements Runnable{
@@ -50,6 +49,15 @@ public class ClientHandler implements Runnable{
                         break;
                    case FORGET_PASSWORD:
                         answer=API.ForgetPassword(income);
+                        break;
+                    case ADD_POST:
+                        answer=API.AddPost(income);
+                        break;
+                    case GET_POSTS:
+                        answer=API.getPosts(income);
+                        break;
+                    case LIKE_POST:
+                        answer=API.LikePost(income);
                         break;
 
 

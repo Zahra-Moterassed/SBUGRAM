@@ -38,7 +38,11 @@ public class PageLoader {
         stage.setScene(scene);
         stage.show();
     }
-
-
+    //load fxmls with a special controller set in the runtime
+    public void load(String fxml, Object controller) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Client/View/" + fxml + ".fxml"));
+        fxmlLoader.setController(controller);
+        fxmlLoader.load();
+    }
 
 }

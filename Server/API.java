@@ -2,10 +2,13 @@ package Server;
 
 import Common.Account;
 import Common.Commands;
+import Common.Post;
 import Common.Time;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class API {
     public static Map<String,Object> isUserNameUnique(Map<String,Object> income){
@@ -57,7 +60,7 @@ public class API {
 
         System.out.println(newAccount.getUserName() + " register" ); //add image address
         System.out.println("time : "+Time.getTime());
-        System.out.println(newAccount.getUserName() + " signin");
+        System.out.println(newAccount.getUserName() + " login");
         System.out.println("time : "+Time.getTime());
 
 
@@ -78,12 +81,9 @@ public class API {
         Account account = Server.accounts.get(username).findAccount(username,ForgetPassword);
         answer.put("answer",account);
 
-        if(account != null){
-        }
         return answer;
     }
 
-//shouldcheck
     public static Map<String,Object> updateProfile(Map<String,Object> income){
 
         Account newAccount = (Account) income.get("account");
@@ -94,6 +94,11 @@ public class API {
         Map<String,Object> ans = new HashMap<>();
         ans.put("command",Commands.UPDATE_PROFILE);
         ans.put("answer",new Boolean(true));
+
+        System.out.println(newAccount.getUserName()+" update info");
+
+        System.out.println("time : "+Time.getTime());
+
         return ans;
     }
 
@@ -105,4 +110,37 @@ public class API {
     }
 
 
+    public static Map<String, Object> AddPost(Map<String, Object> income) {
+        Map<String,Object> answer = new HashMap<>();
+        Post newPost= (Post) income.get("post");
+        Server.posts.add(newPost);
+        DataBase.getInstance().updateDataBase();
+
+        answer.put("command",Commands.ADD_POST);
+        answer.put("answer",new Boolean(true));
+
+        return answer;
+    }
+
+    public static Map<String, Object> getPosts(Map<String, Object> income) {
+        Map<String,Object> answer = new HashMap<>();
+        answer.put("command",Commands.GET_POSTS);
+        answer.put("answer",Server.posts);
+        return answer;
+
+    }
+
+    public static Map<String, Object> LikePost(Map<String, Object> income) {
+        Map<String,Object> answer = new HashMap<>();
+        Post newPost = (Post) income.get("post");
+        Server.posts.remove(newPost);
+        Server.posts.add(newPost);
+        DataBase.getInstance().updateDataBase(); // save to local file
+
+        Map<String,Object> ans = new HashMap<>();
+        ans.put("command",Commands.LIKE_POST);
+        ans.put("answer",new Boolean(true));
+        return ans;
+
+    }
 }
