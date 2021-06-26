@@ -21,6 +21,7 @@ public class NewPostController {
         post.setDescription(description);
         post.setTitle(title);
         post.setWriter(ClientEXE.getProfile());
+
         if (ClientAPI.AddPost(post)) {
             new PageLoader().load("timeLine");
         }

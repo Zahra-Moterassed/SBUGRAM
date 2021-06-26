@@ -68,7 +68,10 @@ public class ClientConnector {
             socketOut.writeObject(toSend);
             socketOut.flush();
             socketOut.reset();
+
             received = (Map<String,Object>) socketIn.readObject();
+
+
             return received;
 
         } catch (ClassNotFoundException e){

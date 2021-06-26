@@ -77,7 +77,9 @@ public class ClientAPI {
         Map<String,Object> toSend = new HashMap<>();
         toSend.put("command",Commands.ADD_POST);
         toSend.put("post",post);
+
         Map<String,Object> received = ClientConnector.serve(toSend);
+
         if ( received.get("answer") == null ) return false;
         return (Boolean) received.get("answer");
     }

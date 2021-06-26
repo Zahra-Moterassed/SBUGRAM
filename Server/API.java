@@ -115,9 +115,9 @@ public class API {
         Post newPost= (Post) income.get("post");
         Server.posts.add(newPost);
         DataBase.getInstance().updateDataBase();
-
         answer.put("command",Commands.ADD_POST);
         answer.put("answer",new Boolean(true));
+
 
         return answer;
     }
