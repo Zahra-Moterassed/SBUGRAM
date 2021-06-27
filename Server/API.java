@@ -119,7 +119,7 @@ public class API {
             answer.put("command", Commands.ADD_POST);
             answer.put("answer", new Boolean(true));
 
-            System.out.println(ClientEXE.getProfile().AccountUsername+" publish");
+            System.out.println(newPost.getWriter().AccountUsername+" publish");
             System.out.println("message: "+newPost.getTitle()+" "+newPost.getWriter().AccountUsername);
             System.out.println("time : "+Time.getTime());
             return answer;
