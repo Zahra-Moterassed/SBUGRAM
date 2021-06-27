@@ -55,6 +55,7 @@ public class PostItemController {
         AtomicInteger like=new AtomicInteger();
         like.set(post.getLikes().incrementAndGet());
         post.setLikes(like);
+        ClientEXE.setProfile(post.getWriter());
        if (ClientAPI.LikePost(post)){
            likes.setText(String.valueOf(post.getLikes()));
        }

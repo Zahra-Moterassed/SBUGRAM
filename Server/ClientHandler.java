@@ -46,6 +46,7 @@ public class ClientHandler implements Runnable{
                         break;
                     case LogOut:
                         clientOnline = false;
+                        answer= API.logout(income);
                         break;
                    case FORGET_PASSWORD:
                         answer=API.ForgetPassword(income);

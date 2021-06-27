@@ -1,5 +1,6 @@
 package Server;
 
+import Client.ClientEXE;
 import Common.Account;
 import Common.Commands;
 import Common.Post;
@@ -103,6 +104,8 @@ public class API {
         Map<String,Object> ans = new HashMap<>();
         ans.put("command",Commands.LogOut);
         ans.put("answer",new Boolean(true));
+        System.out.println("logout");
+        System.out.println("time : "+Time.getTime());
         return ans;
     }
 
@@ -115,6 +118,10 @@ public class API {
             DataBase.getInstance().updateDataBase();
             answer.put("command", Commands.ADD_POST);
             answer.put("answer", new Boolean(true));
+
+            System.out.println(ClientEXE.getProfile().AccountUsername+" publish");
+            System.out.println("message: "+newPost.getTitle()+" "+newPost.getWriter().AccountUsername);
+            System.out.println("time : "+Time.getTime());
             return answer;
         }catch (Exception e){e.printStackTrace();}
         return null;
@@ -125,6 +132,9 @@ public class API {
         Map<String,Object> answer = new HashMap<>();
         answer.put("command",Commands.GET_POSTS);
         answer.put("answer",Server.posts);
+
+        System.out.println(" get posts list");
+        System.out.println("time : "+Time.getTime());
         return answer;
 
     }
@@ -140,6 +150,10 @@ public class API {
         Map<String,Object> ans = new HashMap<>();
         ans.put("command",Commands.LIKE_POST);
         ans.put("answer",new Boolean(true));
+
+        System.out.println(newPost.getWriter().AccountUsername+" like");
+        System.out.println("message: "+newPost.getWriter().AccountUsername+" "+newPost.getTitle());
+        System.out.println("time : "+Time.getTime());
         return ans;
 
     }

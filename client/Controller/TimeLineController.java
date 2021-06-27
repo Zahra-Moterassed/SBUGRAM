@@ -45,6 +45,6 @@ public class TimeLineController {
 
         //customize each cell of postList with new graphic object PostItem
         postsList.setCellFactory(postList -> new PostItem());
-        new PageLoader().load("Menu");
+        new PageLoader().load("timeLine");
     }
 }
